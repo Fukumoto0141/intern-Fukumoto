@@ -2,6 +2,11 @@
   margin: 30px;
   padding: 20px;
 }
+
+.book-list-card-size{
+  size: 660px;
+}
+
 .default-field{
   min-width: 150px;
   max-width: 500px;
