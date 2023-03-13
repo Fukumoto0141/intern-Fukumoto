@@ -1,0 +1,20 @@
+
+.register-card{
+  margin: 30px;
+  padding: 20px;
+}
+
+.book-info-card{
+  margin: 30px;
+  padding: 20px;
+}
+
+.default-field{
+  min-width: 150px;
+  max-width: 500px;
+  width: 100%;
+}
+
+.score-field{
+  max-width: 250px;
+}

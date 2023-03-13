@@ -1,0 +1,47 @@
+<mat-card class="register-card">
+  <mat-card-title class=""><h1>書籍登録</h1></mat-card-title>
+  <form class="form-size">
+    <div>
+        <mat-form-field class="default-field">
+          <mat-label>書籍名</mat-label>
+          <input matInput  >
+        </mat-form-field>
+    </div>
+    <div>
+      <mat-form-field class="default-field">
+        <mat-label>あらすじ</mat-label>
+        <textarea matInput></textarea>
+      </mat-form-field>
+    </div>
+    <div>
+      <mat-form-field class="score-field">
+        <mat-label>評価点</mat-label>
+        <input matInput type="number">
+      </mat-form-field>
+    </div>
+  </form>
+
+  <mat-card-actions align="end">
+    <button mat-raised-button color="primary">追加</button>
+  </mat-card-actions>
+</mat-card>
+
+<div *ngFor="let book of bookList" class="contents-space">
+  <mat-card class="book-info-card">
+    <mat-card-title>
+      <h1>{{book.name}}</h1>
+    </mat-card-title>
+
+    <mat-card-content>
+      {{book.detail}}
+    </mat-card-content>
+
+    <mat-card-content>
+      評価点：{{book.evaluation}}点
+    </mat-card-content>
+
+    <mat-card-actions align="end">
+      <button mat-raised-button color="warn">削除</button>
+    </mat-card-actions>
+  </mat-card>
+</div>
