@@ -1,10 +1,12 @@
-.card{
+
+.register-card{
   margin: 30px;
   padding: 20px;
 }
 
-.book-list-card-size{
-  size: 660px;
+.book-info-card{
+  margin: 30px;
+  padding: 20px;
 }
 
 .default-field{
@@ -12,6 +14,7 @@
   max-width: 500px;
   width: 100%;
 }
+
 .score-field{
   max-width: 250px;
 }
