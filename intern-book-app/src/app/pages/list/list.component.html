@@ -25,23 +25,4 @@
     <button mat-raised-button color="primary">追加</button>
   </mat-card-actions>
 </mat-card>
-
-<div *ngFor="let book of bookList" class="contents-space">
-  <mat-card class="book-info-card">
-    <mat-card-title>
-      <h1>{{book.name}}</h1>
-    </mat-card-title>
-
-    <mat-card-content>
-      {{book.detail}}
-    </mat-card-content>
-
-    <mat-card-content>
-      評価点：{{book.evaluation}}点
-    </mat-card-content>
-
-    <mat-card-actions align="end">
-      <button mat-raised-button color="warn">削除</button>
-    </mat-card-actions>
-  </mat-card>
-</div>
+<app-card [books]="bookList"></app-card>
