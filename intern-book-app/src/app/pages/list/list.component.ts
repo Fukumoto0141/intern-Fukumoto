@@ -1,6 +1,7 @@
-import { DeclarationListEmitMode } from '@angular/compiler';
 import { Component } from '@angular/core';
+import {FormControl, Validators} from '@angular/forms';
 import { Book } from '../../types/book';
+
 
 
 @Component({
@@ -9,6 +10,7 @@ import { Book } from '../../types/book';
   styleUrls: ['./list.component.css']
 })
 export class ListComponent {
+  bookInfoFormControl = new FormControl('', [Validators.required]);
 
   bookList: Book[] = [
     {
@@ -22,4 +24,19 @@ export class ListComponent {
       evaluation: 100
     }
   ];
+
+  addedBook: Book = {
+    // name: '',
+    // detail: '',
+    // evaluation: 0
+  };
+
+  addBookInfo():void{
+    this.bookList.push(this.addedBook)
+    this.addedBook = {
+      // name: '',
+      // detail: '',
+      // evaluation: 0
+    };
+  }
 }
