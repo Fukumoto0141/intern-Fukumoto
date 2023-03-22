@@ -1,6 +1,6 @@
 
 export interface Book {
-  name?: string;
-  detail?: string;
+  name: string;
+  detail: string;
   evaluation?: number;
 }
