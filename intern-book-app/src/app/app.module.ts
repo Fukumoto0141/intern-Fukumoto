@@ -7,7 +7,7 @@ import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatCardModule} from '@angular/material/card';
 import {MatInputModule} from '@angular/material/input';
 import {MatButtonModule} from '@angular/material/button';
-
+import {MatDialogModule} from '@angular/material/dialog';
 
 
 
@@ -16,15 +16,18 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToolbarComponent } from './components/toolbar/toolbar.component';
 import { ListComponent } from './pages/list/list.component';
 import { CardComponent } from './components/card/card.component';
+import { DialogComponent } from './components/dialog/dialog.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ToolbarComponent,
     ListComponent,
-    CardComponent
+    CardComponent,
+    DialogComponent
   ],
   imports: [
+    MatDialogModule,
     ReactiveFormsModule,
     FormsModule,
     MatCardModule,

@@ -28,6 +28,6 @@
 <div *ngFor="let aBook of bookList">
   <!-- 削除ボタンを押した時に発生するdeleteEventイベントが発生した時にcrossOffBookInfo()を呼び出す。
   その際に$eventを引数に指定することでdeleteEventにemit()で渡された値(変数book)をメソッドに受け渡す -->
-  <app-card [bookInfo]="aBook" (deleteEvent)="crossOffBookInfo($event)"></app-card>
+  <app-card [bookInfo]="aBook" (deleteEvent)="openDialog($event)"></app-card>
 </div>
 <div *ngIf="bookList.length==0">データがありません</div>
