@@ -17,6 +17,7 @@ import { ToolbarComponent } from './components/toolbar/toolbar.component';
 import { ListComponent } from './pages/list/list.component';
 import { CardComponent } from './components/card/card.component';
 import { DialogComponent } from './components/dialog/dialog.component';
+import { MessageComponent } from './message/message.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { DialogComponent } from './components/dialog/dialog.component';
     ToolbarComponent,
     ListComponent,
     CardComponent,
-    DialogComponent
+    DialogComponent,
+    MessageComponent
   ],
   imports: [
     MatDialogModule,
