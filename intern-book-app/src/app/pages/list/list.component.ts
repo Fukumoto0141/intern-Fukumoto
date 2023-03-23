@@ -10,7 +10,7 @@ import { Book } from '../../types/book';
   styleUrls: ['./list.component.css']
 })
 export class ListComponent {
-  bookInfoFormControl = new FormControl('', [Validators.required]);
+  // bookInfoFormControl = new FormControl('', [Validators.required]);
 
   bookList: Book[] = [
     {
@@ -26,17 +26,12 @@ export class ListComponent {
   ];
 
   addedBook: Book = {
-    // name: '',
-    // detail: '',
-    // evaluation: 0
+    name: '',
+    detail: '',
+    evaluation: 0
   };
 
   addBookInfo():void{
     this.bookList.push(this.addedBook)
-    this.addedBook = {
-      // name: '',
-      // detail: '',
-      // evaluation: 0
-    };
   }
 }
