@@ -8,6 +8,7 @@ import { Book } from '../../types/book';
 })
 export class CardComponent {
   @Input() bookInfo : Book = {
+    id: 0,
     name: '',
     detail: '',
     evaluation: 0

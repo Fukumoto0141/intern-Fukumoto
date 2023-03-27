@@ -4,19 +4,19 @@
     <div>
         <mat-form-field class="default-field">
           <mat-label>書籍名</mat-label>
-          <input matInput name="bookName" [(ngModel)]="addedBookInfo.name">
+          <input matInput name="bookName" [(ngModel)]="inputBook.name">
         </mat-form-field>
     </div>
     <div>
       <mat-form-field class="default-field">
         <mat-label>あらすじ</mat-label>
-        <textarea matInput name="bookDetail" [(ngModel)]="addedBookInfo.detail"></textarea>
+        <textarea matInput name="bookDetail" [(ngModel)]="inputBook.detail"></textarea>
       </mat-form-field>
     </div>
     <div>
       <mat-form-field class="score-field">
         <mat-label>評価点</mat-label>
-        <input matInput type="number" name="bookEvaluation" [(ngModel)]="addedBookInfo.evaluation">
+        <input matInput type="number" name="bookEvaluation" [(ngModel)]="inputBook.evaluation">
       </mat-form-field>
     </div>
   </form>
@@ -25,8 +25,8 @@
   </mat-card-actions>
 </mat-card>
 
-<div *ngFor="let aBook of bookList">
+
+
 <!-- 削除ボタンを押した時に発生するdeleteEventイベントが発生した時にcrossOffBookInfo()を呼び出す。
 その際に$eventを引数に指定することでdeleteEventにemit()で渡された値(変数book)をメソッドに受け渡す -->
-<app-card [bookInfo]="aBook" (deleteEvent)="crossOffBookInfo($event)"></app-card>
-</div>
+<app-card *ngFor="let book of bookList" [bookInfo]="book" (deleteEvent)="deleteBookInfo($event)"></app-card>
