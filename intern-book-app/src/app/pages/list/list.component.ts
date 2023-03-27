@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import {FormControl, Validators} from '@angular/forms';
 import { Book } from '../../types/book';
 
 
@@ -10,7 +9,6 @@ import { Book } from '../../types/book';
   styleUrls: ['./list.component.css']
 })
 export class ListComponent {
-  // bookInfoFormControl = new FormControl('', [Validators.required]);
 
   bookList: Book[] = [
     {

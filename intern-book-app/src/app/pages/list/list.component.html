@@ -25,4 +25,4 @@
     <button mat-raised-button color="primary" (click)="addBookInfo()">追加</button>
   </mat-card-actions>
 </mat-card>
-<app-card *ngFor="let aBook of bookList" [book]="aBook" ></app-card>
+<app-card *ngFor="let book of bookList" [book]="book" ></app-card>
