@@ -1,19 +1,19 @@
 <div>
   <mat-card class="book-info-card">
     <mat-card-title>
-      <h1>{{book.name}}</h1>
+      <h1>{{bookInfo.id}}.{{bookInfo.name}}</h1>
     </mat-card-title>
 
     <mat-card-content>
-      {{book.detail}}
+      {{bookInfo.detail}}
     </mat-card-content>
 
     <mat-card-content>
-      評価点：{{book.evaluation}}点
+      評価点：{{bookInfo.evaluation}}点
     </mat-card-content>
 
     <mat-card-actions align="end">
-      <button mat-raised-button color="warn">削除</button>
+      <button mat-raised-button color="warn" (click)="onClick()">削除</button>
     </mat-card-actions>
   </mat-card>
 </div>
