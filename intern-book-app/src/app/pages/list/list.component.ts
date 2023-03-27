@@ -1,6 +1,6 @@
-import { DeclarationListEmitMode } from '@angular/compiler';
 import { Component } from '@angular/core';
 import { Book } from '../../types/book';
+
 
 
 @Component({
@@ -22,4 +22,14 @@ export class ListComponent {
       evaluation: 100
     }
   ];
+
+  addedBook: Book = {
+    name: '',
+    detail: '',
+    evaluation: 0
+  };
+
+  addBookInfo():void{
+    this.bookList.push(this.addedBook)
+  }
 }

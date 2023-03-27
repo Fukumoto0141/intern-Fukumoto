@@ -4,25 +4,25 @@
     <div>
         <mat-form-field class="default-field">
           <mat-label>書籍名</mat-label>
-          <input matInput  >
+          <input matInput  name="bookName" [(ngModel)]="addedBook.name">
         </mat-form-field>
     </div>
     <div>
       <mat-form-field class="default-field">
         <mat-label>あらすじ</mat-label>
-        <textarea matInput></textarea>
+        <textarea matInput name="bookDetail" [(ngModel)]="addedBook.detail"></textarea>
       </mat-form-field>
     </div>
     <div>
       <mat-form-field class="score-field">
         <mat-label>評価点</mat-label>
-        <input matInput type="number">
+        <input matInput type="number" name="bookEvaluation" [(ngModel)]="addedBook.evaluation">
       </mat-form-field>
     </div>
   </form>
 
   <mat-card-actions align="end">
-    <button mat-raised-button color="primary">追加</button>
+    <button mat-raised-button color="primary" (click)="addBookInfo()">追加</button>
   </mat-card-actions>
 </mat-card>
-<app-card [books]="bookList"></app-card>
+<app-card *ngFor="let book of bookList" [book]="book" ></app-card>
