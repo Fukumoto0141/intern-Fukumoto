@@ -25,12 +25,12 @@
   </mat-card-actions>
 </mat-card>
 
-<ng-container *ngIf="bookList.length > 0; then areBooks; else noBook" >
+<ng-container *ngIf="bookList.length > 0; then hasBooks; else noBook" >
 <!--bookListに書籍が登録されていれば全ての書籍情報を表示する要素(#areBooks)をng-containerの中に表示する。
     書籍が一冊も登録されていなければ"データがありません"と表示する要素(#noBook)をng-containerの中に表示する。-->
 </ng-container>
 
-<ng-template #areBooks>
+<ng-template #hasBooks>
   <!--削除ボタンを押した時に発生するdeleteEventイベントが発生した時にdeleteBookInfo()を呼び出す。
       その際に$eventを引数に指定することでdeleteEventにemit()で渡された値(変数book)をdeleteBookInfo()メソッドに受け渡す-->
   <app-card *ngFor="let book of bookList" [bookInfo]="book" (deleteEvent)="deleteBookInfo($event)"></app-card>
