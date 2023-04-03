@@ -33,7 +33,7 @@
 <ng-template #hasBooks>
   <!--削除ボタンを押した時に発生するdeleteEventイベントが発生した時にdeleteBookInfo()を呼び出す。
       その際に$eventを引数に指定することでdeleteEventにemit()で渡された値(変数book)をdeleteBookInfo()メソッドに受け渡す-->
-  <app-card *ngFor="let book of bookList" [bookInfo]="book" (deleteEvent)="deleteBookInfo($event)"></app-card>
+  <app-card *ngFor="let book of bookList" [bookInfo]="book" (deleteEvent)="openDialog($event)"></app-card>
 </ng-template>
 
 <ng-template #noBook>
