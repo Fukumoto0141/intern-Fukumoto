@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { Book } from '../../types/book';
 import { MatDialog, MAT_DIALOG_DATA, MatDialogConfig } from '@angular/material/dialog';
+import { MessageService } from 'src/app/services/message.service';
 import { ConfirmDialogComponent } from '../../components/confirm-dialog/confirm-dialog.component';
 
 
@@ -10,8 +11,10 @@ import { ConfirmDialogComponent } from '../../components/confirm-dialog/confirm-
   styleUrls: ['./list.component.css']
 })
 export class ListComponent {
-  constructor(private dialog:MatDialog){
-  }
+  constructor(
+    private dialog:MatDialog,
+    private messageService: MessageService
+    ){}
   bookList: Book[] = [
     {
       id: 0,
@@ -32,6 +35,13 @@ export class ListComponent {
     detail: '',
     evaluation: 0
   };
+  //ログのメッセージを追加するメソッド
+  addMessage(bookName:string){
+    this.messageService.add(`${bookName}が追加されました`);
+  }
+  deleteMessage(bookName:string){
+    this.messageService.add(`${bookName}が削除されました`);
+  }
   //ダイアログを表示するメソッド
   openDialog(deletedBookInfo: Book ){
     const dialogRef = this.dialog.open(ConfirmDialogComponent, {
@@ -48,15 +58,17 @@ export class ListComponent {
   //書籍情報の追加するメソッド
   addBookInfo():void{
     const book:Book = {
-      id: this.bookList[this.bookList.length - 1].id + 1,
+      id: this.bookList.length ? this.bookList[this.bookList.length - 1].id + 1 : 0,
       name: this.inputBook.name,
       detail: this.inputBook.detail,
       evaluation: this.inputBook.evaluation
     }
     this.bookList.push(book);
+    this.addMessage(this.inputBook.name);
   }
   //書籍情報を削除するメソッド
   deleteBookInfo(deletedBookInfo: Book){
     this.bookList = this.bookList.filter((el) => el.id !== deletedBookInfo.id);
+    this.deleteMessage(deletedBookInfo.name);
   }
 }

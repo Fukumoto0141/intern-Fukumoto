@@ -13,3 +13,8 @@
 .score-field{
   max-width: 250px;
 }
+
+.no-message-container{
+  margin: 36px;
+  font-weight: bold;
+}

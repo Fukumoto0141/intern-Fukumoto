@@ -1,0 +1,10 @@
+<h1 mat-dialog-title>以下の書籍情報を削除しますか？</h1>
+<div mat-dialog-content>
+  <div>{{data.deletedBookInfo.name}}</div>
+  <div>{{data.deletedBookInfo.detail}}</div>
+  <div>評価点:{{data.deletedBookInfo.evaluation}}</div>
+</div>
+<div mat-dialog-actions>
+  <button mat-button [mat-dialog-close]="false">キャンセル</button>
+  <button mat-button [mat-dialog-close]="true">OK</button>
+</div>
