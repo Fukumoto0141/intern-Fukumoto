@@ -16,8 +16,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToolbarComponent } from './components/toolbar/toolbar.component';
 import { ListComponent } from './pages/list/list.component';
 import { CardComponent } from './components/card/card.component';
-import { DialogComponent } from './components/dialog/dialog.component';
 import { MessageComponent } from './message/message.component';
+import { ConfirmDialogComponent } from './components/confirm-dialog/confirm-dialog.component';
 
 @NgModule({
   declarations: [
@@ -25,8 +25,8 @@ import { MessageComponent } from './message/message.component';
     ToolbarComponent,
     ListComponent,
     CardComponent,
-    DialogComponent,
-    MessageComponent
+    MessageComponent,
+    ConfirmDialogComponent
   ],
   imports: [
     MatDialogModule,
